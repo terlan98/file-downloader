@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="497ed21c-e490-468f-8f6e-c0623cf277e9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tarlan/FileDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tarlan/SequentialDownloader.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1jEoyGvP0Zkh5KAbIJQFe3BJjqn" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+  </component>
+  <component name="RunManager">
+    <configuration name="FileDownloader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FileDownloader" />
+      <module name="FileDownloader" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.FileDownloader" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="497ed21c-e490-468f-8f6e-c0623cf277e9" name="Default Changelist" comment="" />
+      <created>1603378864341</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603378864341</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1398" height="179" key="GridCell.Tab.0.bottom" timestamp="1603380961849">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="179" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1603380961849" />
+    <state width="1398" height="179" key="GridCell.Tab.0.bottom/0.23.1440.813@0.23.1440.813" timestamp="1603379609326" />
+    <state width="1398" height="179" key="GridCell.Tab.0.center" timestamp="1603380961847">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="179" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1603380961847" />
+    <state width="1398" height="179" key="GridCell.Tab.0.center/0.23.1440.813@0.23.1440.813" timestamp="1603379609323" />
+    <state width="1398" height="179" key="GridCell.Tab.0.left" timestamp="1603380961847">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="179" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1603380961847" />
+    <state width="1398" height="179" key="GridCell.Tab.0.left/0.23.1440.813@0.23.1440.813" timestamp="1603379609322" />
+    <state width="1398" height="179" key="GridCell.Tab.0.right" timestamp="1603380961848">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="179" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1603380961848" />
+    <state width="1398" height="179" key="GridCell.Tab.0.right/0.23.1440.813@0.23.1440.813" timestamp="1603379609325" />
+    <state x="221" y="89" key="SettingsEditor" timestamp="1603381027335">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1603381027335" />
+  </component>
+</project>
