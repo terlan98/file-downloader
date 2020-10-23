@@ -1,15 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="497ed21c-e490-468f-8f6e-c0623cf277e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/FileURL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/project-template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tarlan/FileDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tarlan/SequentialDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FileDownloader/FileDownloader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FileDownloader/FileDownloader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FileDownloader/SequentialDownloader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FileDownloader/SequentialDownloader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileDownloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SequentialDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SequentialDownloader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +37,13 @@
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -29,7 +53,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -61,30 +87,69 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state width="1398" height="179" key="GridCell.Tab.0.bottom" timestamp="1603380961849">
+    <state x="291" y="25" key="CommitChangelistDialog2" timestamp="1603381081534">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="179" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1603380961849" />
+    <state x="291" y="25" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1603381081534" />
+    <state width="1398" height="179" key="GridCell.Tab.0.bottom" timestamp="1603478985065">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="179" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1603478985065" />
     <state width="1398" height="179" key="GridCell.Tab.0.bottom/0.23.1440.813@0.23.1440.813" timestamp="1603379609326" />
-    <state width="1398" height="179" key="GridCell.Tab.0.center" timestamp="1603380961847">
+    <state width="1398" height="179" key="GridCell.Tab.0.center" timestamp="1603478985064">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="179" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1603380961847" />
+    <state width="1398" height="179" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1603478985064" />
     <state width="1398" height="179" key="GridCell.Tab.0.center/0.23.1440.813@0.23.1440.813" timestamp="1603379609323" />
-    <state width="1398" height="179" key="GridCell.Tab.0.left" timestamp="1603380961847">
+    <state width="1398" height="179" key="GridCell.Tab.0.left" timestamp="1603478985063">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="179" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1603380961847" />
+    <state width="1398" height="179" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1603478985063" />
     <state width="1398" height="179" key="GridCell.Tab.0.left/0.23.1440.813@0.23.1440.813" timestamp="1603379609322" />
-    <state width="1398" height="179" key="GridCell.Tab.0.right" timestamp="1603380961848">
+    <state width="1398" height="179" key="GridCell.Tab.0.right" timestamp="1603478985064">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="179" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1603380961848" />
+    <state width="1398" height="179" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1603478985064" />
     <state width="1398" height="179" key="GridCell.Tab.0.right/0.23.1440.813@0.23.1440.813" timestamp="1603379609325" />
-    <state x="221" y="89" key="SettingsEditor" timestamp="1603381027335">
+    <state width="1398" height="130" key="GridCell.Tab.1.bottom" timestamp="1603475879721">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1603381027335" />
+    <state width="1398" height="130" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1603475879721" />
+    <state width="1398" height="130" key="GridCell.Tab.1.center" timestamp="1603475879719">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="130" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1603475879719" />
+    <state width="1398" height="130" key="GridCell.Tab.1.left" timestamp="1603475879718">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="130" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1603475879718" />
+    <state width="1398" height="130" key="GridCell.Tab.1.right" timestamp="1603475879720">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="130" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1603475879720" />
+    <state x="221" y="89" key="SettingsEditor" timestamp="1603477834341">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1603477834341" />
+    <state x="279" y="186" width="882" height="617" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1603474027828">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="279" y="186" width="882" height="617" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1440.900@0.0.1440.900" timestamp="1603474027828" />
+    <state x="496" y="223" key="refactoring.ChangeSignatureDialog" timestamp="1603444556077">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="496" y="223" key="refactoring.ChangeSignatureDialog/0.0.1440.900@0.0.1440.900" timestamp="1603444556077" />
   </component>
 </project>
