@@ -1,5 +1,8 @@
 import java.net.URL;
 
+/**
+ * Contains the URL and ID of a file.
+ */
 public class FileURL
 {
 	private final URL url;

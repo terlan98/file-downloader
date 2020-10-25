@@ -1,38 +1,47 @@
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.io.File;
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class FileDownloader
 {
+	public static final String DOWNLOAD_FOLDER = "downloaded_files";
+	
 	/**
-	 * Contains the URL strings of the files to be downloaded
-//	 */
-//	private static final String[] FILE_URL_STRINGS = {"http://www.ubicomp.org/ubicomp2003/adjunct_proceedings/proceedings.pdf",
-//			"https://www.hq.nasa.gov/alsj/a17/A17_FlightPlan.pdf", "https://ars.els-cdn.com/content/image/1-s2.0-S0140673617321293-mmc1.pdf",
-//			"http://www.visitgreece.gr/deployedFiles/StaticFiles/maps/Peloponnese_map.pdf"};
+	 * Stores the count of files that have been downloaded so far.
+	 * It is atomic to ensure thread safety.
+	 */
+	public static AtomicInteger downloadCount = new AtomicInteger(0);
 	
-		private static final String[] FILE_URL_STRINGS = {"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-				"http://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf", "https://erj.ersjournals.com/content/erj/32/5/1141.full.pdf"};
-		
-	
-	public static void main(String[] args) throws IOException
+	/**
+	 * Contains the URLs of the files to be downloaded
+	 */
+	private static final ArrayList<FileURL> fileURLs;
+	static
 	{
-		//		if (args.length == 0) // if no arguments were specified
-		//		{
-		//			System.err.println("Please specify the thread mode. (0 - single threaded, 1 - multi threaded)");
-		//			return;
-		//		}
+		// Reading URLs from config
+		ConfigReader reader = new ConfigReader();
+		fileURLs = reader.read();
+	}
+	
+	public static void main(String[] args)
+	{
+		// Creating the download directory if it doesn't exist
+		File dir = new File(DOWNLOAD_FOLDER);
+		if (!dir.exists()) dir.mkdirs();
+		
+		if (args.length == 0) // if no arguments were specified
+		{
+			System.err.println("Please specify the thread mode. (0 - single threaded, 1 - multi threaded)");
+			return;
+		}
 		
 		// Parsing the argument as an int and starting the download
 		try
 		{
-			//			int threadMode = Integer.parseInt(args[0]);
-			int threadMode = 0;
+			int threadMode = Integer.parseInt(args[0]);
 			startDownload(threadMode);
 		}
 		catch (NumberFormatException | InvalidParameterException e)
@@ -44,7 +53,7 @@ public class FileDownloader
 	/**
 	 * Starts the download of files in the specified thread mode.
 	 *
-	 * @param threadMode indicates the thread mode. Use 0 for single threaded, and 1 for multi threaded.
+	 * @param threadMode Use 0 for single threaded, and 1 for multi threaded.
 	 * @throws InvalidParameterException if the thread mode is different from 0 or 1
 	 */
 	private static void startDownload(int threadMode) throws InvalidParameterException
@@ -66,7 +75,6 @@ public class FileDownloader
 		
 		try
 		{
-			ArrayList<FileURL> fileURLs = stringsToFileURLs(FILE_URL_STRINGS);
 			SequentialDownloader downloader = new SequentialDownloader(fileURLs);
 			Thread thread = new Thread(downloader);
 			
@@ -74,15 +82,12 @@ public class FileDownloader
 			thread.start();
 			
 			thread.join();
-			System.out.println("\nTime: " + (System.currentTimeMillis() - startTime) / 1000.0 + " sec");
+			String duration = String.format("%.2f", (System.currentTimeMillis() - startTime) / 1000.0);
+			System.out.println("\nTime: " + duration + " sec");
 		}
 		catch (InterruptedException e)
 		{
 			e.printStackTrace();
-		}
-		catch (MalformedURLException e)
-		{
-			System.err.println("One of the URLs is invalid.");
 		}
 	}
 	
@@ -95,7 +100,6 @@ public class FileDownloader
 		
 		try
 		{
-			ArrayList<FileURL> fileURLs = stringsToFileURLs(FILE_URL_STRINGS);
 			Queue<FileURL> fileURLQueue = new LinkedList<>(fileURLs);
 			
 			int cores = Runtime.getRuntime().availableProcessors();
@@ -127,7 +131,7 @@ public class FileDownloader
 			
 			long startTime = System.currentTimeMillis();
 			
-			// Starting the threads
+			// Creating and starting the threads
 			for (int i = 0; i < threads.length; i++)
 			{
 				threads[i] = new Thread(downloaders[i]);
@@ -135,43 +139,25 @@ public class FileDownloader
 			}
 			
 			// Joining the threads
-			for (int i = 0; i < threads.length; i++)
+			for (Thread thread : threads)
 			{
-				threads[i].join();
-				
-				if (i < threads.length - 1) // we need to print a comma unless we reach the last thread
-				{
-					System.out.print('|');
-				}
+				thread.join();
 			}
 			
-			System.out.println("\nTime: " + (System.currentTimeMillis() - startTime) / 1000.0 + " sec");
+			String duration = String.format("%.2f", (System.currentTimeMillis() - startTime) / 1000.0);
+			System.out.println("\nTime: " + duration + " sec");
 		}
 		catch (InterruptedException e)
 		{
 			e.printStackTrace();
 		}
-		catch (MalformedURLException e)
-		{
-			System.err.println("One of the URLs is invalid.");
-		}
 	}
 	
 	/**
-	 * Converts the given array of URL strings to a FileURL <b>ArrayList</b>.
-	 *
-	 * @param urlStrings an array containing url strings
+	 * Returns the total number files that the program will download.
 	 */
-	private static ArrayList<FileURL> stringsToFileURLs(String[] urlStrings) throws MalformedURLException
+	public static int getTotalFileCount()
 	{
-		FileURL[] fileURLS = new FileURL[urlStrings.length];
-		
-		for (int i = 0; i < urlStrings.length; i++)
-		{
-			URL url = new URL(urlStrings[i]);
-			fileURLS[i] = new FileURL(i + 1, url);
-		}
-		
-		return new ArrayList<>(Arrays.asList(fileURLS));
+		return fileURLs.size();
 	}
 }

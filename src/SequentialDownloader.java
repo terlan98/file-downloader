@@ -1,12 +1,13 @@
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 
-
+/**
+ * Downloads files from a given list of FileURLs sequentially.
+ */
 public class SequentialDownloader implements Runnable
 {
 	/**
@@ -29,20 +30,17 @@ public class SequentialDownloader implements Runnable
 	{
 		try
 		{
-			for (int i = 0; i < fileURLs.size(); i++)
+			for (FileURL fileURL : fileURLs)
 			{
-				FileURL fileURL = fileURLs.get(i);
 				String urlString = fileURL.getURLString();
 				String fileName = "file" + fileURL.getId();
-				String fileExtension = urlString.substring(urlString.lastIndexOf('.')); // extracting the last
-				// component of the url string
+				String fileExtension = urlString.substring(urlString.lastIndexOf('.')); // extracting the last component of the url string
 				
 				InputStream in = fileURL.getURL().openStream();
-				Files.copy(in, Paths.get(fileName + fileExtension), StandardCopyOption.REPLACE_EXISTING);
+				Files.copy(in, Paths.get(FileDownloader.DOWNLOAD_FOLDER + '/' + fileName + fileExtension), StandardCopyOption.REPLACE_EXISTING);
 				in.close();
 				
-				System.out.print(" " + fileName + " -> done");
-				if (fileURL.getId() != fileURLs.size()) System.out.print(",");
+				printSuccessMessage(fileName);
 			}
 		}
 		catch (IOException e)
@@ -57,5 +55,19 @@ public class SequentialDownloader implements Runnable
 	public void addFileURL(FileURL fileURL)
 	{
 		fileURLs.add(fileURL);
+	}
+	
+	/**
+	 * Prints the name of the file and '-> done' followed by a comma if necessary.
+	 *
+	 * @param fileName name of the file that was downloaded successfully
+	 */
+	private void printSuccessMessage(String fileName)
+	{
+		int downloadCount = FileDownloader.downloadCount.incrementAndGet();
+		
+		System.out.print(" " + fileName + " -> done");
+		if (downloadCount != FileDownloader.getTotalFileCount()) // no comma if this is the last file
+			System.out.print(",");
 	}
 }
