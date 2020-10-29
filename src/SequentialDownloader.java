@@ -45,7 +45,7 @@ public class SequentialDownloader implements Runnable
 		}
 		catch (IOException e)
 		{
-			System.out.println("Download was not successful. Please make sure that you have a valid Internet connection");
+			System.err.println("Download was not successful. Please make sure that you have a valid Internet connection");
 		}
 	}
 	

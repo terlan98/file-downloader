@@ -60,9 +60,14 @@ public class FileDownloader
 	{
 		switch (threadMode)
 		{
-			case 0 -> startSequentialDownload();
-			case 1 -> startMultiThreadedDownload();
-			default -> throw new InvalidParameterException();
+			case 0:
+				startSequentialDownload();
+				break;
+			case 1:
+				startMultiThreadedDownload();
+				break;
+			default:
+				throw new InvalidParameterException();
 		}
 	}
 	
